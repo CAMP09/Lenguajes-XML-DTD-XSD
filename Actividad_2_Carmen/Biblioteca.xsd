@@ -1,0 +1,222 @@
+<?xml version="1.0"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema">
+    <annotation>
+        <documentation>
+            Esquema de una biblioteca, con tres elementos principales:libros, revistas y periodicos.
+        </documentation>
+    </annotation>
+<element name="biblioteca">
+    <complexType>
+        <sequence>
+ <!--El elemento libro tendrá que figurar como mínimo de 1 a N veces-->       
+            <element name="libros">
+                <complexType>
+                    <sequence> 
+                     <element name="libro" minOccurs="1" maxOccurs="unbounded">
+                        <complexType>
+                            <sequence>
+ <!--El elemento "titulo_libro" será de tipo string tendrá entre 5 y 50 caracteres-->                            
+                                <element name="titulo_libro">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <minLength value="5"/>
+                                        <maxLength value="50"/>
+                                    </restriction>
+                                </simpleType>
+                                </element>
+                                <element name="capitulos">
+                                    <complexType>
+                                        <sequence>
+ <!--Cada libro podrá tener entre 1 y 10 capítulos y los elemntos que lo componen tendrán que figurar en el mismo orden que se detalla -->
+                                            <element name="capitulo" minOccurs="1" maxOccurs="10">
+                                                <complexType>
+                                                    <sequence>
+                                                        <element name="titulo_capitulo" type="string"></element>
+                                                        <element name="contenido" ></element>
+                                                    </sequence> 
+                                                        <attribute name="n_pag_cap" type="integer"></attribute>
+                                                        <attribute name="enlace" type="string"></attribute>                 
+                                                </complexType>
+                                            </element>    
+                                        </sequence>                                    
+                                    </complexType>
+                                </element>    
+                                <element name="indice" type="string"/>
+ <!--La sinopsis será un elmento vacío -->
+                                <element name="sinopsis">
+                                    <complexType/>
+                                </element>
+                            </sequence>
+<!--En relación a los atributos, el "id" es obligatorio además máximo tendrá 5 caracteres de los cuales uno es la letra a la que hace referencia "L" sequido de 4 dígitos entre 0 y 5  -->
+                                <attribute name="id" use="required">
+                                    <simpleType>
+                                        <restriction base="string">
+                                            <maxLength value="5"></maxLength>
+                                            <pattern value="[L][0-5]{4}"></pattern>
+                                        </restriction>
+                                    </simpleType>                             
+                                </attribute>
+<!-- El atributo "tipo_clase" también será obligatorio y sólo podrá tener uno de los 3 valores que se detallan ( novela, infantil o didactico) -->
+                                <attribute name="tipo_clase" use="required">
+                                    <simpleType>
+                                        <restriction base="string">
+                                            <enumeration value="novela"></enumeration>
+                                            <enumeration value="infantil"></enumeration>
+                                            <enumeration value="didactico"></enumeration>
+                                        </restriction>
+                                    </simpleType>
+                                </attribute>
+<!--El número de páginas no podrá ser mayor de 2 cifras  -->
+                                <attribute name="n_pag_libro">
+                                    <simpleType>
+                                        <restriction base="integer">
+                                            <totalDigits value="2"></totalDigits>
+                                        </restriction>
+                                    </simpleType>
+                                </attribute>
+                        </complexType>
+                     </element>
+                    </sequence>
+                </complexType>                                           
+            </element>
+
+<!--El elemento revista tendrá que figurar como mínimo de 1 a 100 veces además incluirá todos los elemntos que hay dentro de "revista" siendo el orden indistinto--> 
+            <element name="revistas">
+                <complexType>
+                    <sequence>
+                        <element name="revista" minOccurs="1" maxOccurs="100">
+                            <complexType>
+                                <all>
+                                    <element name="titulo" type="string"></element>
+ <!--El elemento "numero_revista" podrá oscilar entre 1 y 999  -->
+                                    <element name="numero_revista">
+                                        <simpleType>
+                                            <restriction base="integer">
+                                                <minInclusive value="1"></minInclusive>
+                                                <maxExclusive value="999"></maxExclusive>
+                                            </restriction>
+                                        </simpleType>                                    
+                                    </element>
+                                    <element name="indice_contenido" type="string"></element>
+                                    <element name="secciones">
+                                        <complexType>
+                                            <sequence>
+                                                <element name ="seccion">
+                                                    <complexType>
+                                                        <sequence>                                                   
+                                                            <element name="contenido"></element>
+                                                                                                                     
+                                                        </sequence>
+                                                    <attribute name="enlace" type="string"></attribute>
+                                                    <attribute name="n_pag_seccion" type="integer" ></attribute> 
+                                                    </complexType>
+                                                </element>
+                                                </sequence>                                                
+                                            </complexType>                                            
+                                    </element>                                 
+                                </all>
+<!--En relación a los atributos, el "id" es obligatorio además máximo tendrá 5 caracteres de los cuales uno es la letra a la que hace referencia "R" sequido de 4 dígitos entre 0 y 5  -->
+                                    <attribute name="id" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <maxLength value="5"></maxLength>
+                                                <pattern value="[R][0-5]{4}"></pattern>
+                                            </restriction>
+                                        </simpleType>                             
+                                    </attribute>
+<!-- El atributo "tipo_clase" también será obligatorio y sólo podrá tener uno de los 5 valores que se detallan ( informatica, corazon, coches, investigacio y otras) -->                                  
+                                    <attribute name="tipo_clase" use="required">
+                                        <simpleType>
+                                            <restriction base="string">
+                                                <enumeration value="informatica"></enumeration>
+                                                <enumeration value="corazon"></enumeration>
+                                                <enumeration value="coches"></enumeration>
+                                                <enumeration value="investigacion"></enumeration>
+                                                <enumeration value="otras"></enumeration>
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>
+<!--El número de páginas de las revistas no podrá ser superior a 2 cifras -->
+                                    <attribute name="n_pag_revista">
+                                        <simpleType>
+                                            <restriction base="integer">
+                                                <totalDigits value="2"></totalDigits>
+                                            </restriction>
+                                        </simpleType>
+                                    </attribute>
+                            </complexType>                             
+                        </element>
+                    </sequence>                       
+
+                </complexType>
+            </element>
+
+<!--El elemento periodico tendrá que figurar como mínimo de 1 a 10 veces, los elemento que lo componen van en secuencia--> 
+            <element name="periodicos">
+                <complexType>
+                    <sequence>                    
+                     <element name="periodico" minOccurs="1" maxOccurs="10">
+                      <complexType>
+                        <sequence>
+                            <element name ="secciones_periodico">
+                                <complexType>
+                                    <sequence>
+<!-- Como mínimo habrá 1 sección de periódico y como máximo 5 -->
+                                    <element name ="seccion_p" minOccurs="1" maxOccurs="5">
+                                        <complexType>
+                                            <sequence>                                                        
+                                                <element name="articulo"> </element>
+                                                                                                       
+                                            </sequence>
+                                                <attribute name="autor" type="string"></attribute>
+<!--El tipo de sección puede variar entre 5 valores (economia, opinion, deprotes, nacional e internacional  -->
+                                                <attribute name="tipo_seccion" use="required" >
+                                                    <simpleType>
+                                                        <restriction base="string">
+                                                            <enumeration value="economia"></enumeration>
+                                                            <enumeration value="opinion"></enumeration>
+                                                            <enumeration value="deportes"></enumeration>
+                                                            <enumeration value="nacional"></enumeration>
+                                                            <enumeration value="internacional"></enumeration>
+                                                        </restriction>
+                                                    </simpleType>
+                                                </attribute> 
+                                        </complexType>
+                                    </element>
+                                    </sequence>                                                
+                                </complexType>                                         
+                            </element>
+                            <element name ="indice_p" >
+                                <complexType/>
+                            </element>
+                            <element name ="contenido_p"></element>               
+                        </sequence>
+                            <attribute name="enlace" type="string"></attribute>
+<!--En relación a los atributos, el "id" es obligatorio además máximo tendrá 5 caracteres de los cuales uno es la letra a la que hace referencia "P" sequido de 4 dígitos entre 0 y 9  -->
+                            <attribute name="id" use="required">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <maxLength value="5"></maxLength>
+                                        <pattern value="[P][0-9]{4}"></pattern>
+                                    </restriction>
+                                </simpleType>                             
+                            </attribute>
+ <!--El atributo "tipo_clase" de periódico será obligatorio y solo podrá ser uno de los dos siguientes:nacional o internacional  -->
+                            <attribute name="tipo_clase" use="required">
+                                <simpleType>
+                                    <restriction base="string">
+                                        <enumeration value="nacional"></enumeration>
+                                        <enumeration value="internacional"></enumeration>                                        
+                                    </restriction>
+                                </simpleType>
+                            </attribute>
+                            <attribute name="fecha_publicacion" type="date"></attribute>
+                        </complexType> 
+                      </element>    
+                    </sequence>
+                </complexType>
+            </element>
+        </sequence>      
+    </complexType>
+</element>
+</schema>
