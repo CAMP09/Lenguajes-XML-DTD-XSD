@@ -1,0 +1,10 @@
+<revista id="R0001" tipo_clase="informática" paginas="50" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation= "XSD/XSD_revistas.xsd">
+    <titulo>Revista de informática</titulo>
+    <numero >1</numero>
+    <indice></indice>
+    <seccion s_paginas="80">
+        <titulo_seccion> Programacion</titulo_seccion>
+        <contenido enlace="http://ejemplo.com/articulo3" />
+    </seccion>
+    </revista>

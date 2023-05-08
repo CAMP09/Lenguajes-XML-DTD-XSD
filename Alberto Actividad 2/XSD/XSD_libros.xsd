@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>
+            Esquema que marca la estructura de un libro
+        </xs:documentation>
+    </xs:annotation>
+    <!-- El nodo raíz se llama libro-->
+    <xs:element name="libro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="titulo" type="xs:string"/>
+                 <!-- varios capítulos con el título en su interior-->
+                <xs:element name="capitulo" minOccurs="2" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="titulo_capitulo" type="xs:string"/>
+                            <xs:element name="contenido">
+                                <!--contenido, en el que se tiene un atributo con el enlace a la información -->
+                                <xs:complexType>
+                                    <xs:attribute name="enlace" type="xs:string" use="required"/>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                        <xs:attribute name="paginas" type="xs:string" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="indice" type="xs:string"/>
+                <xs:element name="sinopsis" type="xs:string"/>
+            </xs:sequence>
+            <!-- Id con restriccion de que empiece por L y luego 4 digitos-->
+            <xs:attribute name="id" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:pattern value="L\d{4}" />
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <!-- Restriccion de tipo de libro -->
+            <xs:attribute name="tipo_clase" use="required">
+                <xs:simpleType>
+                    <xs:restriction base="xs:string">
+                        <xs:enumeration value="novela"/>
+                        <xs:enumeration value="infantil"/>
+                        <xs:enumeration value="didáctico"/>
+                    </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="paginas" type="xs:integer" use="required"/>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,21 @@
+<!ELEMENT libros (libro+)>
+<!ELEMENT libro (id,tipo_clase,paginas)>
+
+<!-- Definimos los atributos del libro -->
+<!ATTLIST libro id ID #REQUIRED>
+<!ATTLIST libro tipo_clase (novela | infantil | didáctico) #REQUIRED>
+<!ATTLIST libro paginas CDATA #REQUIRED>
+
+<!ELEMENT titulo (#PCDATA)>
+
+<!ELEMENT capitulo (paginas)>
+<!ATTLIST capitulo paginas CDATA #REQUIRED>
+
+<!ELEMENT titulo_capitulo (#PCDATA)>
+<!ELEMENT contenido (#PCDATA)>
+<!ATTLIST contenido enlace CDATA #REQUIRED>
+
+<!ELEMENT indice (#PCDATA)>
+<!ELEMENT sinopsis (#PCDATA)>
+
+<!-- <!ENTITY entity name SYSTEM "URI/URL"> -->

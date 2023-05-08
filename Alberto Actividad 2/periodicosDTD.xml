@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE periodicos SYSTEM "DTD/DTD_periodicos.dtd">
+<periodicos>
+    <periodico id="P1234" tipo_clase="nacional" fecha_publicación="2023-05-05">
+        <seccion tipo_seccion="deportes">
+            <articulo autor="Alberto Arroyo"></articulo>
+        </seccion>
+        <indice>Edix informacion</indice>
+        <contenido enlace="http://ejemplo.com/articulo3" />
+    </periodico>
+</periodicos>

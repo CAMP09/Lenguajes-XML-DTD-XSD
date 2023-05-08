@@ -1,0 +1,16 @@
+
+<!ELEMENT revistas (revista*)>
+<!ELEMENT revista (titulo, numero, indice, seccion+)>
+
+<!ATTLIST revista id ID #REQUIRED>
+<!ATTLIST revista tipo_clase (informática | corazón | coches | investigación | otras) #REQUIRED>
+<!ATTLIST revista paginas CDATA #REQUIRED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT indice (#PCDATA)>
+
+<!ELEMENT seccion (contenido)>
+<!ATTLIST seccion s_paginas CDATA #IMPLIED>
+<!ELEMENT contenido EMPTY>
+<!ATTLIST contenido enlace CDATA #REQUIRED>

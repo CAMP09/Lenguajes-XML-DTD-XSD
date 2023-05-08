@@ -1,0 +1,19 @@
+<!ELEMENT periodicos (periodico*)>
+<!ELEMENT periodico (seccion+, indice, contenido)>
+
+<!ATTLIST periodico id ID #REQUIRED>
+<!ATTLIST periodico tipo_clase (nacional | internacional) #REQUIRED>
+<!ATTLIST periodico fecha_publicación CDATA #REQUIRED>
+
+<!ELEMENT seccion (articulo+)>
+<!ATTLIST seccion tipo_seccion (economica | opinion | deportes | nacional | internacional) #REQUIRED>
+
+<!ELEMENT articulo (#PCDATA)>
+<!ATTLIST articulo autor CDATA #IMPLIED>
+
+<!ELEMENT indice (#PCDATA)>
+<!ELEMENT contenido EMPTY>
+<!ATTLIST contenido enlace CDATA #REQUIRED>
+
+
+<!-- <!ENTITY entity name SYSTEM "URI/URL"> -->

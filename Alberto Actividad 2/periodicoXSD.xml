@@ -1,0 +1,8 @@
+<periodico id="P1234" tipo_clase="nacional" fecha_publicacion="2023-05-05" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation= "XSD/XSD_periodicos.xsd">
+    <seccion tipo_seccion="deportes">
+        <articulo autor="Alberto Arroyo"></articulo>
+    </seccion>
+    <indice>Edix informacion</indice>
+    <contenido enlace="http://ejemplo.com/articulo3" />
+</periodico>

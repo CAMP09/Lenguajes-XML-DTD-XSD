@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>
+            Esquema que marca la estructura de un periodico
+        </xs:documentation>
+    </xs:annotation>
+    <!-- El nodo raíz se llama periodico-->
+    <xs:element name="periodico">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="seccion" minOccurs="1" maxOccurs="unbounded">
+                <xs:complexType>
+                    <xs:sequence>
+                    <xs:element name="articulo" minOccurs="1" maxOccurs="unbounded">
+                        <xs:complexType>
+                        <xs:attribute name="autor" type="xs:string" use="required"/>
+                        </xs:complexType>
+                    </xs:element>
+                    </xs:sequence>
+                    <!-- atributo identificativo del tipo de sección, que puede ser: económica, opinión, deportes, nacional o internaciona-->
+                    <xs:attribute name="tipo_seccion" use="required">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                        <xs:enumeration value="economica"/>
+                        <xs:enumeration value="opinion"/>
+                        <xs:enumeration value="deportes"/>
+                        <xs:enumeration value="nacional"/>
+                        <xs:enumeration value="internacional"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                    </xs:attribute>
+                </xs:complexType>
+                </xs:element>
+                <xs:element name="indice" type="xs:string"/>
+                <!--el contenido será el último elemento del árbol, que necesita un atributo que referencie a la información -->
+                <xs:element name="contenido">
+                <xs:complexType>
+                    <xs:attribute name="enlace" type="xs:string" use="required"/>
+                </xs:complexType>
+                </xs:element>
+            </xs:sequence> 
+            <xs:attribute name="id" use="required">
+            <!-- Id con restriccion de que empiece por P y luego 4 digitos-->
+                <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="P\d{4}"/>
+                </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="tipo_clase" use="required">
+            <!-- Restriccion de tipo de periodico -->
+                <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:enumeration value="nacional"/>
+                    <xs:enumeration value="internacional"/>
+                </xs:restriction>
+                </xs:simpleType>
+            </xs:attribute>
+            <xs:attribute name="fecha_publicacion" type="xs:date" use="required"/> 
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
