@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "biblioteca.dtd"> 
+
+<!-- <biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="biblioteca.xsd"> -->
+<biblioteca>
+
+    <libro id="L0000" tipo_clase="novela" num_pag="150">
+        <titulo> Titulo del libro </titulo>
+        <capitulos>
+            <capitulo num_pag="150">
+                <titulo_capitulo>Titulo capitulo</titulo_capitulo>
+                <contenido enlace="www.libros.com/capitulo1"></contenido>
+            </capitulo>
+            <capitulo num_pag="136">
+                <titulo_capitulo>Titulo capitulo</titulo_capitulo>  
+                <contenido enlace="www.libros.com/capitulo2"></contenido>
+            </capitulo>
+        </capitulos>
+        <indice> Indice </indice>
+        <sinopsis> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt ultricies euismod. Quisque quis nisl massa. Aliquam suscipit, nulla at. </sinopsis>
+    </libro>
+
+    <periodico id="P0000" tipo_clase="nacional" fecha_publicacion="2023-05-09">
+        <secciones>
+            <seccion tipo="economica">
+                <articulos>
+                    <articulo autor="Alejandro Aguiar">
+                        <contenido enlace="www.periodoco.com/economia1"></contenido>
+                    </articulo>
+                    <articulo autor="Alejandro Aguiar">
+                        <contenido enlace="www.periodoco.com/economia2"></contenido>
+                    </articulo>
+                </articulos>
+            </seccion>
+            <seccion tipo="deportes">
+                <articulos>
+                    <articulo autor="Alejandro Aguiar">
+                        <contenido enlace="www.periodoco.com/deportes1"></contenido>
+                    </articulo>
+                    <articulo autor="Alejandro Aguiar">
+                        <contenido enlace="www.periodoco.com/deportes2"></contenido>
+                    </articulo>
+                </articulos>
+            </seccion>
+        </secciones>
+        <indice> Indice </indice>
+    </periodico>
+
+    <revista id="R0000" tipo_clase="coches" num_pag="80">
+        <titulo> Titulo de la Revista</titulo>
+        <numero_revista> 5023 </numero_revista>
+        <indice> Indice </indice>
+        <secciones_revista>
+            <seccion_revista num_pag="10">
+                <contenido enlace="www.revista.com/seccion1"></contenido>
+            </seccion_revista>
+            <seccion_revista num_pag="8">
+                <contenido enlace="www.revista.com/seccion2"></contenido>
+            </seccion_revista>
+        </secciones_revista>
+    </revista>
+
+</biblioteca>
