@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<biblioteca xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="biblioteca.xsd">
+    
+    <libro id="L3201" tipo_clase="novela" pags="97">
+            <titulo>Rebelion en la granja</titulo>
+            
+            <capitulo pags="15">
+                <titulo>Capitulo 3</titulo>
+                <contenido info="http://www.rebeliongranja.es/cap3"></contenido>
+            </capitulo>
+            
+            <indice>Capitulo 1, pág. 3 / Capitulo 2, pág. 23 / Capitulo 3, pág. 33 / Capitulo 4, pág. 43 / Capitulo 5, pág. 53 / Capitulo 6, pág. 63 / Capitulo 7, pág. 73 / Capitulo 8, pág. 83 </indice>
+            
+            <sinopsis>Los animales de la granja de los Jones se sublevan contra sus dueños humanos y los vencen. Pero pronto surgen entre ellos rivalidades y envidias, y algunos se alían con los amos que derrocaron, traicionando su propia identidad y los intereses de su clase. Aunque Rebelión en la granja fue concebido como una despiadada sátira del estalinismo, el carácter abierto y universal de su mensaje hacen de este libro un extraordinario análisis de la corrupción que engendra el poder, una furibunda diatriba contra el totalitarismo de cualquier especie y un lúcido examen de los desplazamientos y manipulaciones que sufre la verdad histórica en los momentos de transformación política. Crónica de una revolución traicionada, de la gradual tergiversación de un ideal, Rebelión en la granja es un examen de conciencia y una inflamada requisitoria que encuentra bellísima expresión literaria en la novela de un hombre que hizo del compromiso y de la denuncia de la injusticia la norma de su existencia.</sinopsis>
+        </libro>
+
+    <revista id="R0567" tipo_clase="informática" pags="35">
+        <titulo>Aprende a programar</titulo>
+        <numero>12</numero>
+        <indice>Lenguajes de programación: 2 / Desarrollo de software: 9 / Programación web: 13 /Bases de datos: 17 /Inteligencia artificial y machine learning: 22 / Seguridad informática: 26 / Internet de las cosas: 29 / Proyectos y casos de estudio: 31</indice>
+        <seccion_r pags="5">
+            <contenido info="http://www.aprendeaprogramar.es/lenguajes"></contenido>
+        </seccion_r>
+    </revista>
+
+    <periodico id="P2048" tipo_clase="nacional" fecha_publicacion="04/05/23">
+        <indice>Noticias principales, pág. 1 / Política, pág. 2 / Economía, pág. 4 / Internacional, pág. 6 / Cultura y Espectáculos, pág. 8 / Deportes, pág. 10 / Opinión, pág. 12</indice>
+        <seccion_p tipo_seccion="economica">
+            <articulo autor="Manuel Levin">
+                <contenido info="https://www.publico.es/economia"></contenido>
+            </articulo>
+        </seccion_p>
+    </periodico>
+</biblioteca>
