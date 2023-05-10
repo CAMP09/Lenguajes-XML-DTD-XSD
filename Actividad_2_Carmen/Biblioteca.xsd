@@ -8,7 +8,7 @@
 <element name="biblioteca">
     <complexType>
         <sequence>
- <!--El elemento libro tendrá que figurar como mínimo de 1 a N veces-->       
+ <!--El elemento libro tendrá que figurar como mínimo de 1 vez y hasta un número ilimitado de veces-->       
             <element name="libros">
                 <complexType>
                     <sequence> 
@@ -33,7 +33,8 @@
                                                     <sequence>
                                                         <element name="titulo_capitulo" type="string"></element>
                                                         <element name="contenido" ></element>
-                                                    </sequence> 
+                                                    </sequence>
+ <!--Los atributos n_pag_cap y enlace son de tipo integer y string respectivamente -->
                                                         <attribute name="n_pag_cap" type="integer"></attribute>
                                                         <attribute name="enlace" type="string"></attribute>                 
                                                 </complexType>
@@ -151,7 +152,7 @@
                 </complexType>
             </element>
 
-<!--El elemento periodico tendrá que figurar como mínimo de 1 a 10 veces, los elemento que lo componen van en secuencia--> 
+<!--El elemento periodico tendrá que figurar como mínimo de 1 a 10 veces, los elementos que lo componen van en secuencia--> 
             <element name="periodicos">
                 <complexType>
                     <sequence>                    
@@ -169,7 +170,7 @@
                                                                                                        
                                             </sequence>
                                                 <attribute name="autor" type="string"></attribute>
-<!--El tipo de sección puede variar entre 5 valores (economia, opinion, deprotes, nacional e internacional  -->
+<!--El tipo de sección será un campo obligatorio y tendrá como restricción la clasificación en alguno de estos 5 valores (economia, opinion, deprotes, nacional e internacional  -->
                                                 <attribute name="tipo_seccion" use="required" >
                                                     <simpleType>
                                                         <restriction base="string">
@@ -201,7 +202,7 @@
                                     </restriction>
                                 </simpleType>                             
                             </attribute>
- <!--El atributo "tipo_clase" de periódico será obligatorio y solo podrá ser uno de los dos siguientes:nacional o internacional  -->
+ <!--El atributo "tipo_clase" de periódico será obligatorio y sólo podrá ser uno de los dos siguientes:nacional o internacional  -->
                             <attribute name="tipo_clase" use="required">
                                 <simpleType>
                                     <restriction base="string">

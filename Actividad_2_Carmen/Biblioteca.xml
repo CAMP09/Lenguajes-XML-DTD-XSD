@@ -3,13 +3,13 @@
 y de la misma hay tres elementos principales : libros, revistas y periodicos-->
 
 <!-- DTD -->
-  <!-- <!DOCTYPE biblioteca SYSTEM "biblioteca.dtd">   -->
+ <!-- <!DOCTYPE biblioteca SYSTEM "biblioteca.dtd">     -->
 
 <!-- XSD -->
- <biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  <biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
         	xsi:noNamespaceSchemaLocation= "biblioteca.xsd"> 
 
- <!-- <biblioteca>   -->
+  <!-- <biblioteca>    -->
 	<libros>
 		<libro id="L1000" tipo_clase="novela" n_pag_libro="70">
 			<titulo_libro>El expreso de Tokio</titulo_libro>
@@ -46,19 +46,19 @@ y de la misma hay tres elementos principales : libros, revistas y periodicos-->
 
 				<capitulo n_pag_cap="3">
 					<titulo_capitulo>Capitulo I</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/capituloI"></contenido>
+					<contenido enlace="biblioteca/libros/infantil/lasaventurasdepinocho/capituloI"></contenido>
 				</capitulo>
 				<capitulo n_pag_cap="4">
 					<titulo_capitulo>Capitulo II</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/capituloII"></contenido>
+					<contenido enlace="biblioteca/libros/infantil/lasaventurasdepinocho/capituloII"></contenido>
 				</capitulo>
 				<capitulo n_pag_cap="5">
 					<titulo_capitulo>Capitulo III</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/capituloIII"></contenido>
+					<contenido enlace="biblioteca/libros/infantil/lasaventurasdepinocho/capituloIII"></contenido>
 				</capitulo>
 				<capitulo n_pag_cap="6">
 					<titulo_capitulo>Capitulo IV</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/capituloIV"></contenido>
+					<contenido enlace="biblioteca/libros/infantil/lasaventurasdepinocho/capituloIV"></contenido>
 				</capitulo>
 
 			</capitulos>
@@ -74,19 +74,19 @@ y de la misma hay tres elementos principales : libros, revistas y periodicos-->
 			<capitulos>
 				<capitulo n_pag_cap="2">
 					<titulo_capitulo>Reglas generales</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/reglasgenerales"></contenido>
+					<contenido enlace="biblioteca/libros/didactico/breveortografiaescolar/reglasgenerales"></contenido>
 				</capitulo>
 				<capitulo n_pag_cap="1">
 					<titulo_capitulo>Reglas del acento</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/reglasdelacento"></contenido>
+					<contenido enlace="biblioteca/libros/didactico/breveortografiaescolar/reglasdelacento"></contenido>
 				</capitulo>
 				<capitulo n_pag_cap="2">
 					<titulo_capitulo>Reglas de la -b</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/reglasdela-b"></contenido>
+					<contenido enlace="biblioteca/libros/didactico/breveortografiaescolar/reglasdela-b"></contenido>
 				</capitulo>
 				<capitulo n_pag_cap="2">
 					<titulo_capitulo>Reglas de la -v</titulo_capitulo>
-					<contenido enlace="biblioteca/libros/novelas/elexpresodetokio/reglasdela-v"></contenido>
+					<contenido enlace="biblioteca/libros/didactico/breveortografiaescolar/reglasdela-v"></contenido>
 				</capitulo>
 
 			</capitulos>
