@@ -1,4 +1,8 @@
+<!-- Los elementos libro, periodico y revista podrán aparecer en la biblioteca entre 0 y n veces -->
+
 <!ELEMENT biblioteca (libro*,periodico*,revista*)>
+
+<!-- Elemento libro-->
 
 <!ELEMENT libro (titulo,capitulos,indice,sinopsis)>
 <!ATTLIST libro id CDATA #REQUIRED>
@@ -14,17 +18,21 @@
 <!ELEMENT indice (#PCDATA)>
 <!ELEMENT sinopsis (#PCDATA)>
 
+<!-- Elemento periodico-->
+
 <!ELEMENT periodico (secciones,indice)>
 <!ATTLIST periodico id CDATA #REQUIRED>
 <!ATTLIST periodico tipo_clase (nacional | internacional) #REQUIRED>
 <!ATTLIST periodico fecha_publicacion CDATA #REQUIRED>
 <!ELEMENT secciones (seccion+)>
-<!ELEMENT seccion (articulos+)>
+<!ELEMENT seccion (articulos)>
 <!ATTLIST seccion tipo (economica | opinion | deportes | nacional | internacional) #IMPLIED>
 <!ATTLIST seccion num_pag CDATA #IMPLIED>
 <!ELEMENT articulos (articulo*, contenido*)>
 <!ATTLIST articulo autor CDATA #REQUIRED>
 <!ELEMENT articulo (contenido)>
+
+<!-- Elemento revista-->
 
 <!ELEMENT revista (titulo,numero_revista,indice,secciones_revista)>
 <!ATTLIST revista id CDATA #REQUIRED>
