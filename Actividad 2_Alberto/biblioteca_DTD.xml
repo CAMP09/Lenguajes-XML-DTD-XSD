@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- DTD -->
+<!DOCTYPE biblioteca SYSTEM "./Validaciones/biblioteca.dtd">
+<!-- Biblioteca   -->
+<biblioteca>
+    <libros>
+        <libro id="L0001" tipo_clase_l="didactico" paginas="250" >
+            <titulo_libro>Validaciones de XML para novatos</titulo_libro>
+            <capitulo c_paginas="10" >
+                <titulo_capitulo>Introducción XSD</titulo_capitulo>
+                <contenido_cap enlace="www.restricciones"/>
+            </capitulo>
+            <capitulo c_paginas="20">
+                <titulo_capitulo>Restricciones XSD</titulo_capitulo>
+                <contenido_cap enlace="www.restricciones"/>
+            </capitulo>
+            <indice_libro>Índice</indice_libro>
+            <sinopsis>Este libro es una introducción a XSD para desarrolladores principiantes.</sinopsis>
+        </libro>
+    </libros>
+
+    <revistas>
+        <revista id="R0001" tipo_clase_r="informatica" paginas="80">
+            <titulo_revista>Revista de informática 2</titulo_revista>
+            <numero >1</numero>
+            <indice_revista></indice_revista>
+            <seccion_r s_paginas="30">
+                <titulo_seccion> Programacion 2 </titulo_seccion>
+                <contenido_rev enlace="http://ejemplo.com/articulo3" />
+            </seccion_r>
+        </revista>
+        
+    </revistas> 
+
+    <periodicos>
+
+        <periodico id="P1234" tipo_clase_p="nacional" fecha_publicacion="2023-05-05">
+            <seccion tipo_seccion="deportes">
+                <articulo autor="Alberto Arroyo"></articulo>
+            </seccion>
+            <indice_periodico>Edix informacion</indice_periodico>
+            <contenido enlace="http://ejemplo.com/articulo3" />
+        </periodico>
+
+    </periodicos>
+</biblioteca>
