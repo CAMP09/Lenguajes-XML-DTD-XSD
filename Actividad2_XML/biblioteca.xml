@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE biblioteca SYSTEM "biblioteca.dtd"> 
+<!-- <!DOCTYPE biblioteca SYSTEM "biblioteca.dtd"> -->
 
-<!-- <biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
- xsi:noNamespaceSchemaLocation="biblioteca.xsd"> -->
-<biblioteca>
+<biblioteca xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="biblioteca.xsd">
+ 
+ <!-- Elemento Libro-->
 
     <libro id="L0000" tipo_clase="novela" num_pag="150">
         <titulo> Titulo del libro </titulo>
@@ -20,6 +21,8 @@
         <indice> Indice </indice>
         <sinopsis> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse tincidunt ultricies euismod. Quisque quis nisl massa. Aliquam suscipit, nulla at. </sinopsis>
     </libro>
+
+ <!-- Elemento Periodico-->
 
     <periodico id="P0000" tipo_clase="nacional" fecha_publicacion="2023-05-09">
         <secciones>
@@ -46,6 +49,8 @@
         </secciones>
         <indice> Indice </indice>
     </periodico>
+
+ <!-- Elemento Revista-->
 
     <revista id="R0000" tipo_clase="coches" num_pag="80">
         <titulo> Titulo de la Revista</titulo>
