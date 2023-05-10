@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE biblioteca SYSTEM "biblioteca.dtd">
+
+<biblioteca>
+        <libro id="L0000" tipo_clase="novela" pags="">
+            <titulo></titulo>
+            <capitulos>
+                <capitulo pags="">
+                    <titulo></titulo>
+                    <contenido info="enlace"></contenido>
+                </capitulo>
+            </capitulos>
+            <indice></indice>
+            <sinopsis></sinopsis>
+        </libro>
+
+    <revista id="R0000" tipo_clase="informática" pags="">
+        <titulo></titulo>
+        <numero></numero>
+        <indice></indice>
+        <secciones pags="">
+            <contenido info="enlace"></contenido>
+        </secciones>
+    </revista>
+
+    <periodico id="P0000" tipo_clase="nacional" fecha_publicacion="fecha">
+        <indice></indice>
+        <seccion tipo_seccion="economica">
+            <articulo autor="nombre">
+                <contenido info="enlace"></contenido>
+            </articulo>
+        </seccion>
+    </periodico>
+</biblioteca>
