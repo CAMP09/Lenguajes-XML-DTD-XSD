@@ -1,0 +1,60 @@
+<!--Definimos los elementos o etiquetas de la Biblioteca y sus atributos-->
+<!ELEMENT biblioteca (libros, revistas, periodicos)>
+
+<!-- LIBROS habrá entre 1 y N , al igual que los capitulos. El indice será opcional.
+Los atributos "id" y "tipo_clase" serán obligatorios y el numero de páginas opcional.
+La sinopsis será un elemento vacio-->
+
+<!ELEMENT libros (libro+) >
+<!ELEMENT libro (titulo_libro, capitulos+, indice?, sinopsis)>
+<!ATTLIST libro id CDATA #REQUIRED>
+<!ATTLIST libro tipo_clase (novela | infantil | didactico) #REQUIRED>
+<!ATTLIST libro n_pag_libro CDATA #IMPLIED>
+
+<!ELEMENT titulo_libro (#PCDATA)>
+<!ELEMENT capitulos (capitulo+)>
+<!ELEMENT capitulo (titulo_capitulo, contenido)>
+<!ATTLIST capitulo n_pag_cap CDATA #IMPLIED>
+<!ELEMENT titulo_capitulo (#PCDATA)>
+<!ATTLIST contenido enlace CDATA #REQUIRED>
+
+<!ELEMENT indice (#PCDATA)>
+<!ELEMENT sinopsis EMPTY>
+
+<!--REVISTAS, entre 1 y N , al igual que el nº de revsita, el índice de contenido 
+podrá oscilar entre 0 y N veces.Los atributos "id" y tipo_clase también serán obligatorios ,
+así como el nº paginas de la seccion y el enlace-->
+
+<!ELEMENT revistas (revista+)>
+<!ELEMENT revista (titulo, numero_revista+, indice_contenido*, secciones)>
+<!ATTLIST revista id CDATA #REQUIRED>
+<!ATTLIST revista tipo_clase (informatica | corazon | coches | investigacion | otras) #REQUIRED>
+<!ATTLIST revista n_pag_revista CDATA #IMPLIED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT numero_revista (#PCDATA)>
+<!ELEMENT indice_contenido (#PCDATA)>
+<!ELEMENT secciones (seccion+)>
+<!ELEMENT seccion (contenido)>
+<!ATTLIST seccion n_pag_seccion CDATA #REQUIRED>
+<!ELEMENT contenido (#PCDATA)>
+<!ATTLIST contenido enlace CDATA #REQUIRED>
+
+<!--PERIODICOS, entre 1 y N , el elemento contenido_p será opcional.Al igual que los  libros y las 
+revistas los atributos "id" y "tipo_clase" son obligatorios.
+ -->
+
+<!ELEMENT periodicos (periodico+)>
+<!ELEMENT periodico (secciones_periodico, indice_p, contenido_p?)>
+<!ATTLIST periodico id CDATA #REQUIRED>
+<!ATTLIST periodico tipo_clase (nacional | internacional) #REQUIRED>
+<!ATTLIST periodico fecha_publicacion CDATA #IMPLIED>
+
+<!ELEMENT secciones_periodico (seccion_p+)>
+<!ELEMENT seccion_p (articulo)>
+<!ATTLIST seccion_p tipo_seccion (economia | opinion | deportes | nacional | internacional) #IMPLIED>
+<!ELEMENT articulo (#PCDATA)>
+<!ATTLIST articulo autor CDATA #REQUIRED>
+<!ELEMENT indice_p (#PCDATA)>
+<!ELEMENT contenido_p (#PCDATA)>
+<!ATTLIST contenido_p enlaces CDATA #REQUIRED>
